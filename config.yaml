@@ -1,0 +1,80 @@
+# config.yaml
+
+customHtmlTooltip:
+  enabled: true # Set to true to use the HTML tooltip, false for default canvas tooltip
+  containerId: "chartjs-custom-tooltip" # ID for the main tooltip div
+  titleClass: "tooltip-header"
+  movieTitleClass: "movie-title"
+  characterNameClass: "character-name"
+  bodyClass: "tooltip-body-content"
+  bigFiveItemClass: "big5-item"
+  traitNameClass: "trait-name"
+  traitScoreClass: "trait-score"
+  scoreColors:
+    lowThreshold: 2.0
+    highThreshold: 4.0
+    lowColor: "#e06c75"  # Reddish
+    midColor: "#e5c07b"  # Yellow/Orange (default)
+    highColor: "#98c379" # Greenish
+
+tooltip:
+  enabled: true
+  backgroundColor: "#333842" # Slightly different background
+  borderColor: "#50555E"
+  borderWidth: 1
+  titleColor: "#EFEFEF" # Brighter title
+  bodyColor: "#C0C5CE"
+  padding: { top: 10, bottom: 10, left: 12, right: 12 } # Object for specific padding
+  cornerRadius: 8
+  displayColors: false # Set true to show small color box next to each body line
+  titleFont:
+    family: "'Roboto', sans-serif"
+    size: 14
+    style: "normal"
+    weight: "bold"
+    lineHeight: 1.3
+  bodyFont:
+    family: "'Roboto', sans-serif"
+    size: 10
+    style: "normal"
+    weight: "normal"
+    lineHeight: 1.3
+  caretSize: 6
+  caretPadding: 10
+  titleMarginBottom: 8 # More space after title
+
+clusterChart:
+  point:
+    radius: 8
+    hoverRadius: 12
+    borderWidth: 2
+    hoverBorderWidth: 3
+  legend:
+    display: true
+    position: "top"
+    labels:
+      color: "#dedede"
+      font: { size: 12 }
+      padding: 15
+      usePointStyle: true
+      pointStyle: "circle"
+  axes:
+    x:
+      title: "UMAP Dimension 1"
+      titleColor: "#dedede"
+      titleFont: { size: 13, weight: "500" }
+      ticksColor: "#abb2bf"
+      ticksFont: { size: 11 }
+      gridColor: "rgba(128, 128, 128, 0.2)"
+    y:
+      title: "UMAP Dimension 2"
+      titleColor: "#dedede"
+      titleFont: { size: 13, weight: "500" }
+      ticksColor: "#abb2bf"
+      ticksFont: { size: 11 }
+      gridColor: "rgba(128, 128, 128, 0.2)"
+
+# You could also add global chart settings here if needed
+# globalChart:
+#   font:
+#     family: "'Roboto', sans-serif"
