@@ -5,6 +5,11 @@
   <br>
 </p>
 
+<p align="center">
+  <img src="README02.jpg" alt="Screenshot of the Big5 interactive clustering" style="border-radius: 8px;">
+  <br>
+</p>
+
 This project is an interactive dashboard for visualizing the personality profiles of movie characters using the Big Five model. It goes beyond static charts by providing a user-driven, exploratory interface to discover how characters cluster and compare based on their unique traits.
 
 ## ✨ Features
