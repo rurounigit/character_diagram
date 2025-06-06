@@ -1,5 +1,10 @@
 # Movie Character Personality Profiler
 
+<p align="center">
+  <img src="README01.jpg" alt="Screenshot of the Big5 Radar Chart" style="border-radius: 8px;">
+  <br>
+</p>
+
 This project is an interactive dashboard for visualizing the personality profiles of movie characters using the Big Five model. It goes beyond static charts by providing a user-driven, exploratory interface to discover how characters cluster and compare based on their unique traits.
 
 ## ✨ Features
@@ -15,12 +20,6 @@ This project is an interactive dashboard for visualizing the personality profile
 *   **Custom HTML Tooltips:** Hovering over a point on the scatter plot reveals a rich tooltip with the character's name, movie, and their complete Big Five scores, with high/low values colored for quick analysis.
 *   **Data-Driven:** The entire application is populated from a `clean_movie_database.yaml` file, making it easy to use with your own datasets.
 *   **Configurable Appearance:** Key visual elements, such as colors, fonts, and tooltip styles, can be easily modified through the `config.yaml` file.
-
-## 📸 Preview
-
-**(A new screenshot showing the interactive "Global Dataset Profile" selectors would be highly recommended here!)**
-Example:
-`![App Screenshot](README01.jpg)`
 
 ## 🛠️ Technologies Used
 
