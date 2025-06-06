@@ -1,29 +1,17 @@
 # config.yaml
 
-# Section for controlling cluster name generation logic
+# Controls the "High/Mid/Low" tags in the UI. Does NOT affect naming logic.
 clusterNameGeneration:
-  # Adjusts how much a globally common trait is de-emphasized in cluster names.
-  # This value is multiplied by a trait's "importance score" if that trait
-  # is already common across the entire dataset AND it passes the threshold check below.
-  # - 1.0 = No penalty.
-  # - 0.5 = 50% penalty (original default).
-  # - 0.0 = Maximum penalty (will completely ignore the trait if the penalty is applied).
-  significancePenaltyMultiplier: 0.01
-
-  # Sets the deviation a trait must be UNDER to be considered for a penalty.
-  # The penalty is only applied if a trait is globally common AND its deviation from
-  # the neutral middle (3.0) is less than this value.
-  # - 1.5 = Original hardcoded default. Penalizes modestly common traits.
-  # - 5.0 = A very high value. This effectively forces ALL globally common traits
-  #         to be penalized, regardless of how extreme their score is.
-  penaltyOverrideThreshold: 2.6
-
-  # A trait is flagged as "globally high" or "globally low" if its average
-  # score across ALL characters in the database crosses these thresholds.
   globalHighThreshold: 3.7
   globalLowThreshold: 2.5
-  highTraitThreshold: 3.6
-  lowTraitThreshold: 2.5
+
+# (Optional) Define the words used for cluster names.
+clusterNameDescriptors:
+    Openness: { high: "Open", low: "Settled" }
+    Conscientiousness: { high: "Diligent", low: "Flexible" }
+    Extraversion: { high: "Extrovert", low: "Introvert" }
+    Agreeableness: { high: "Agreeable", low: "Lone Wolf" }
+    Neuroticism: { high: "Neurotic", low: "Composed" }
 
 radarChart:
   tooltip:
