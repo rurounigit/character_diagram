@@ -1,5 +1,61 @@
 # config.yaml
 
+# Section for controlling cluster name generation logic
+clusterNameGeneration:
+  # Adjusts how much a globally common trait is de-emphasized in cluster names.
+  # This value is multiplied by a trait's "importance score" if that trait
+  # is already common across the entire dataset AND it passes the threshold check below.
+  # - 1.0 = No penalty.
+  # - 0.5 = 50% penalty (original default).
+  # - 0.0 = Maximum penalty (will completely ignore the trait if the penalty is applied).
+  significancePenaltyMultiplier: 0.01
+
+  # Sets the deviation a trait must be UNDER to be considered for a penalty.
+  # The penalty is only applied if a trait is globally common AND its deviation from
+  # the neutral middle (3.0) is less than this value.
+  # - 1.5 = Original hardcoded default. Penalizes modestly common traits.
+  # - 5.0 = A very high value. This effectively forces ALL globally common traits
+  #         to be penalized, regardless of how extreme their score is.
+  penaltyOverrideThreshold: 2.6
+
+  # A trait is flagged as "globally high" or "globally low" if its average
+  # score across ALL characters in the database crosses these thresholds.
+  globalHighThreshold: 3.7
+  globalLowThreshold: 2.5
+  highTraitThreshold: 3.6
+  lowTraitThreshold: 2.5
+
+radarChart:
+  tooltip:
+    enabled: true
+    backgroundColor: "#313640"
+    titleColor: "#e6e6e6"
+    bodyColor: "#c8cdd4"
+    padding: 12
+    cornerRadius: 6
+    titleFont:
+      family: "'Roboto', sans-serif"
+      size: 13
+      weight: "bold"
+    bodyFont:
+      family: "'Roboto', sans-serif"
+      size: 11
+    # New positioning options:
+    positionMode: 'customNearPoint' # 'default' or 'customNearPoint'
+    # Alignment if positionMode is 'customNearPoint':
+    # xAlign positions the tooltip box relative to the point's X coordinate.
+    # 'center': tooltip is centered horizontally on the point.
+    # 'left': tooltip's left edge aligns with the point's X (tooltip appears to the right).
+    # 'right': tooltip's right edge aligns with the point's X (tooltip appears to the left).
+    customXAlign: 'center'
+    # yAlign positions the tooltip box relative to the point's Y coordinate.
+    # 'bottom': tooltip's bottom edge aligns with the point's Y (tooltip appears above the point).
+    # 'top': tooltip's top edge aligns with the point's Y (tooltip appears below the point).
+    # 'center': tooltip is centered vertically on the point.
+    customYAlign: 'bottom'
+    caretPadding: 10 # Standard Chart.js option: space between chart point and tooltip edge.
+    # displayColors: false # (already implicitly false for radar)
+
 customHtmlTooltip:
   enabled: true # Set to true to use the HTML tooltip, false for default canvas tooltip
   containerId: "chartjs-custom-tooltip" # ID for the main tooltip div
@@ -49,6 +105,8 @@ clusterChart:
     hoverRadius: 12
     borderWidth: 2
     hoverBorderWidth: 3
+    borderColor: "rgba(60,60,60,0.7)" # Default border color for non-highlighted points
+    highlightBorderColor: "#FFFFFF"     # Border color for the synced/selected point
   legend:
     display: true
     position: "top"
